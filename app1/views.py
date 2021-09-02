@@ -26,10 +26,10 @@ def randomUserInfo(request, id):
 @api_view(['POST'])
 def inputUserInfo(request):
     print(request.form)
+    user_info = userInfo() 
+    user_info.IDs=request.Post['IDs']
+    user_info.name = requset.Post['name']
     IDs = request.POST['IDs']
     name = request.POST['name']
-    data = {
-        'IDs':IDs,
-        'name':name
-    }
-    return Response(data)
+    request.save()
+    return Response("hello I'm Post")
