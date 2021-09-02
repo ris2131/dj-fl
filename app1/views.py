@@ -26,8 +26,8 @@ def randomUserInfo(request, id):
 @api_view(['POST'])
 def inputUserInfo(request):
     user_info = userInfo() #넣어둘 모델var 미리 설정
-    #user_info.IDs=request.Post['IDs']
-    #user_info.name = request.Post['name']
+    user_info.IDs=request.Post['IDs']
+    user_info.name = request.Post['name']
     #IDs = request.POST['ID']
     #name = request.POST['name']
     #user_info.save()
