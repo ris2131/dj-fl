@@ -20,3 +20,9 @@ def randomUserInfo(request, id):
     serializer = userInfoSerializer(randomUserInfo, many=True)
     return Response(serializer.data)
     #return Response(id)
+
+#"IDs","name"을 body를 JSON 형태로 하나 받음.
+#이를 JSON-> model userInfo로 변환 해서 이를 서버에 저장 해보려고 함.
+@api_view(['POST'])
+def inputUserInfo(request):
+    return Response("hello I'm POST")
