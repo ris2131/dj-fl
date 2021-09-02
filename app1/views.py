@@ -28,7 +28,7 @@ def inputUserInfo(request):
     print(request.form)
     user_info = userInfo() 
     user_info.IDs=request.Post['IDs']
-    user_info.name = requset.Post['name']
+    user_info.name = request.Post['name']
     IDs = request.POST['IDs']
     name = request.POST['name']
     request.save()
