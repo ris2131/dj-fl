@@ -31,4 +31,4 @@ def inputUserInfo(request):
     #IDs = request.POST['ID']
     #name = request.POST['name']
     #user_info.save()
-    return Response(request)
+    return Response("hello I'm Post")
