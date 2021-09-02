@@ -25,10 +25,10 @@ def randomUserInfo(request, id):
 #이를 JSON-> model userInfo로 변환 해서 이를 서버에 저장 해보려고 함.
 @api_view(['POST'])
 def inputUserInfo(request):
-    user_info = userInfo() #넣어둘 모델var 미리 설정
-    user_info.IDs=request.Post['IDs']
-    user_info.name = request.Post['name']
+    #user_info = userInfo() #넣어둘 모델var 미리 설정
+    #user_info.IDs=request.Post['IDs']
+    #user_info.name = request.Post['name']
     #IDs = request.POST['IDs']
     #name = request.POST['name']
-    request.save()
+    #request.save()
     return Response("hello I'm Post")
