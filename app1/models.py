@@ -5,4 +5,5 @@ from django.db.models.fields import IntegerField
 
 class userInfo(models.Model):
     IDs = models.IntegerField()
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, default='guest')
+    pw = models.CharField(max_length=20, default='abcdefgh')

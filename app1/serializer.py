@@ -4,4 +4,4 @@ from .models import userInfo
 class userInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = userInfo
-        fields= ('IDs','name')
+        fields= ('IDs','name','pw')
