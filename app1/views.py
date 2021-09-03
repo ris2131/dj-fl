@@ -27,7 +27,7 @@ def randomUserInfo(request, id):
 def inputUserInfo(request):
     user_info = userInfo() #넣어둘 모델var 미리 설정
     #user_info.IDs =request.POST['IDs']
-    user_info.IDs = userInfo.objects.count() + 1
+    user_info.IDs = userInfo.objects.count() + 1# 일어날 문제 : 고쳐줘야겠다. ID 삭제 하거나 하면 이게 중복 일어날 수 있겠다!!모르겠지만 여기 참고해보기https://jangwon.io/django/2018/02/20/(Django)-custom-autofield-%EA%B5%AC%ED%98%84/
     user_info.name = request.POST['name']
     user_info.pw = request.POST['pw']
     user_info.save()
