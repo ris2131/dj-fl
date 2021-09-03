@@ -5,6 +5,7 @@ urlpatterns =[
     path("hello/", helloAPI),
     path("<int:id>/", randomUserInfo),
     path("inputUserInfo/",inputUserInfo),
-    
+    #inputFeedInfo
+    #testFeedInfo
 ]
 
