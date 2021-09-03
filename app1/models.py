@@ -10,7 +10,7 @@ class userInfo(models.Model):
 
 
 class feedInfo(models.Model):
-    feedID = models.CharField(primary_key=True) # primary key
+    feedID = models.IntegerField(primary_key=True) # primary key
     species = models.IntegerField() # 1:dog 2:cat # default=-1?
     brand = models.CharField(max_length=20,default = "no brand info")
     feedName = models.CharField(max_length=20,default = "no feedName info")
