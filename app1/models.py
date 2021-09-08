@@ -12,7 +12,7 @@ class userInfo(models.Model):
 
 class feedInfo(models.Model):
     #id
-    #id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     #feedID = models.IntegerField(primary_key=True,auto_created=True) # primary key
     species = models.IntegerField() # 1:dog 2:cat # default=-1?
     brand = models.CharField(max_length=20,default = "no brand info")
