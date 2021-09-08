@@ -21,6 +21,8 @@ def randomUserInfo(request, id):
     return Response(serializer.data)
     #return Response(id)
 
+
+# BUG제안(inseok) : 안되는 id 넣으면 서버 터진다.
 @api_view(['GET'])
 def getUserInfo(request,id):
     #totalUserInfo = userInfo.objects.all()#되게 SQL 같다.
