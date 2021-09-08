@@ -4,7 +4,7 @@ from django.db.models.fields import IntegerField
 # Create your models here.
 
 class userInfo(models.Model):
-    IDs = models.IntegerField()
+    #IDs = models.IntegerField()#id 있어서 써보고 싶어서..
     name = models.CharField(max_length=20, default='guest')
     pw = models.CharField(max_length=20, default='abcdefgh')
 

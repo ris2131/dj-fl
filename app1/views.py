@@ -21,15 +21,23 @@ def randomUserInfo(request, id):
     return Response(serializer.data)
     #return Response(id)
 
+@api_view(['GET'])
+def getUserInfo(request,id):
+    #totalUserInfo = userInfo.objects.all()#되게 SQL 같다.
+    uInfo = userInfo.objects.get(id=id) #get 이 있네 id=id 가 이상했는데 맞을까 했는데 되네. 앞 id 는 model 클래스의 id변수 , 뒤의 id는 파라미터로 받아오는 id 
+    serializer = userInfoSerializer(uInfo)
+    return Response(serializer.data)
+
+
 #"IDs","name"을 body를 JSON 형태로 하나 받음.
 #이를 JSON-> model userInfo로 변환 해서 이를 서버에 저장 해보려고 함.
 @api_view(['POST'])
 def inputUserInfo(request):
     user_info = userInfo() #넣어둘 모델var 미리 설정
     #user_info.IDs =request.POST['IDs']
-    user_info.IDs = userInfo.objects.count() + 1# 일어날 문제 : 고쳐줘야겠다. ID 삭제 하거나 하면 이게 중복 일어날 수 있겠다!!모르겠지만 여기 참고해보기https://jangwon.io/django/2018/02/20/(Django)-custom-autofield-%EA%B5%AC%ED%98%84/
+    #user_info.IDs = userInfo.objects.count() + 1# 일어날 문제 : 고쳐줘야겠다. ID 삭제 하거나 하면 이게 중복 일어날 수 있겠다!!모르겠지만 여기 참고해보기https://jangwon.io/django/2018/02/20/(Django)-custom-autofield-%EA%B5%AC%ED%98%84/
     user_info.name = request.POST['name']
     user_info.pw = request.POST['pw']
     user_info.save()
     return Response("hello I'm Post")
-    
+
