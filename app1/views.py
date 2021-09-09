@@ -47,7 +47,7 @@ def inputUserInfo(request):
 #화면에 보여주는 역할
 @api_view(['POST'])
 def findFeed(request):
-    size = request.size['size']#debug
+    size = request.POST['size']#debug
     #여기서 def 를 하나 만들어서 계산해주는 back 을 하나 만들어 줄 예정
     #[def]calFeed : request 를 통해서 원하는 제품을 뽑아내주는 return (feedID, feedName 출력)
     #return render(request,size)
