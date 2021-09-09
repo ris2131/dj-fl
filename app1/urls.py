@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import  helloAPI, randomUserInfo,inputUserInfo, getUserInfo, findFeed, cleanUserInfo #내가 만든 함수
+from .views import  helloAPI, randomUserInfo,inputUserInfo, getUserInfo, findFeed #내가 만든 함수
 
 urlpatterns =[
     path("hello/", helloAPI),
