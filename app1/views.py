@@ -5,6 +5,9 @@ from .models import userInfo
 from .serializer import userInfoSerializer
 import random
 from django.shortcuts import render
+
+from findFeed.calculateFeed import calFeed
+
 # Create your views here.
 @api_view(['GET'])
 def helloAPI(request):
@@ -47,8 +50,10 @@ def inputUserInfo(request):
 #화면에 보여주는 역할
 @api_view(['POST'])
 def findFeed(request):
-    size = request.POST['size']#debug
+    #size = request.POST['size']#debug
     #여기서 def 를 하나 만들어서 계산해주는 back 을 하나 만들어 줄 예정
     #[def]calFeed : request 를 통해서 원하는 제품을 뽑아내주는 return (feedID, feedName 출력)
+    feedInfo = calFeed(request)
+
     #return render(request,size)
-    return Response(size)
+    return Response(feedInfo)
