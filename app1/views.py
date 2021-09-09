@@ -4,6 +4,7 @@ from rest_framework.decorators import api_view
 from .models import userInfo
 from .serializer import userInfoSerializer
 import random
+from django.shortcuts import render
 # Create your views here.
 @api_view(['GET'])
 def helloAPI(request):
@@ -43,3 +44,8 @@ def inputUserInfo(request):
     user_info.save()
     return Response("hello I'm Post")
 
+#화면에 보여주는 역할
+@api_view(['POST'])
+def findFeed(request):
+    size = request.size['size']#debug
+    return render(size)
