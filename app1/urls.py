@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import  helloAPI, randomUserInfo,inputUserInfo, getUserInfo, findFeed #내가 만든 함수
+from .views import  helloAPI, randomUserInfo,inputUserInfo, getUserInfo, findFeed ,makeFeedDB#내가 만든 함수
 
 urlpatterns =[
     path("hello/", helloAPI),
@@ -8,6 +8,7 @@ urlpatterns =[
     path("inputUserInfo/",inputUserInfo),
     path("getId/<int:id>",getUserInfo),
     path("findFeed",findFeed),
+    path("makeFeedDB", makeFeedDB),
     #inputFeedInfo
     #testFeedInfo
 ]

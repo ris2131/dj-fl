@@ -59,4 +59,9 @@ def findFeed(request):
     #return render(request,size)
     #return Response(feedInfo)
     return Response("hello")
-##
+
+@api_view(['GET'])
+def makeFeedDB(request):
+    #def
+    #csvToDict('file')
+    return Response("DONE")
