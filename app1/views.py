@@ -59,3 +59,9 @@ def findFeed(request):
     #return render(request,size)
     #return Response(feedInfo)
     return Response("hello")
+
+#CHEAT : 급할때써라. db 다날라간다
+@api_view(['GET'])
+def cleanUserInfo(request):
+    userInfo.clean_fields
+    return Response("clean done")
