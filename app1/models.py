@@ -12,7 +12,7 @@ class userInfo(models.Model):
 
 class feedInfo(models.Model):
     #id
-    #id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     #feedID = models.IntegerField(primary_key=True,auto_created=True) # primary key
     #species = models.IntegerField() # 1:dog 2:cat # default=-1?
     #brand = models.CharField(max_length=20,default = "no brand info")
@@ -21,6 +21,7 @@ class feedInfo(models.Model):
     #allergy = #리스트 어떻게? #일단 charField받아올까? #아마 새로운 테이블(allergy) 만들어서 feedID 랑 엮어야하지 않을까 함.
     #flavor() = #리스트 어떻게?#일단 charField 받아올까? #아마 새로운 테이블 만들어서 feedID 랑 엮어야 하지 않을까 함
     #pet = models.CharField(max_length=10,default="no pet info")
+    
     brand = models.CharField(max_length=20,default = "no brand data")
     name = models.CharField(max_length=40,default = "no feedName data")
     foodType = models.CharField(max_length=10, default = "no info")

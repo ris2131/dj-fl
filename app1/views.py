@@ -4,9 +4,10 @@ from rest_framework.decorators import api_view
 from .models import userInfo
 from .serializer import userInfoSerializer
 import random
+
 from django.shortcuts import render
 
-from findFeed.calculateFeed import calFeed
+from .findFeed.calculateFeed import calFeed
 
 # Create your views here.
 @api_view(['GET'])
@@ -56,4 +57,5 @@ def findFeed(request):
     feedInfo = calFeed(request)
 
     #return render(request,size)
-    return Response(feedInfo)
+    #return Response(feedInfo)
+    return Response("hello")
