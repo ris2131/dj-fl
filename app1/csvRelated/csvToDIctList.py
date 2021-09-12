@@ -60,7 +60,7 @@ def csvToDictList():
             #dic_data["nutr"][8] = float(line["오메가3"])
             #dic_data["nutr"][9] = float(line["오메가6"])
             #alg, disease, main_eff, kibble 얘네들 입력받아야함!!!
-            dic_data["alg"] = [alg_data.strip() for alg_data in line["Allergy"].split(",")]
+            dic_data["alg"] = [alg_data.strip() for alg_data in line["Allergy"].split(",")] #inseok BUG 제안? "연어, 콩" 이면 콩이 " 콩" 이렇게 저장 되지 않나?
             
             #dic_data["age"] = line["급여연령"].split("~")
             #dic_data["age"][0] = float(dic_data["age"][0])
@@ -68,7 +68,7 @@ def csvToDictList():
             #    dic_data["age"][1] = 99999
             #else:
             #    dic_data["age"][1] = float(dic_data["age"][1])
-            dic_data["flavor"] = [flavor_data.strip() for flavor_data in line["Mainflavor"].split(",")]
+            dic_data["flavor"] = [flavor_data.strip() for flavor_data in line["Mainflavor"].split(",")] #BUG 제안 이것도 스페이스?
             
 
             #dic_data["age"] = list(map(float,dic_data["age"] ))
