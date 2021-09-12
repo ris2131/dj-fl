@@ -67,8 +67,8 @@ def findFeed(request):
     dict_list = csvToDictList(flavorKey,algKey,healthKey)
 
     dict_list= filterDictList.filter_flavor(dict_list,flavorKey)
-    filterDictList.filter_alg(dict_list,algKey)
-    filterDictList.filter_health(dict_list,healthKey)
+    dict_list=filterDictList.filter_alg(dict_list,algKey)
+    dict_list=filterDictList.filter_health(dict_list,healthKey)
 
     #return Response(feedInfo)
     return Response(dict_list)
