@@ -70,7 +70,7 @@ def findFeed(request):
     #return Response(feedInfo)
     return Response(dict_list)
 
-@api_view(['GET'])
+@api_view(['POST'])
 def makeFeedDB(request):
     #def
     feed_info = feedInfo() #넣어둘 모델var 미리 설정
