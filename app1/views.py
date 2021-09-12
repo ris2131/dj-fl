@@ -1,14 +1,14 @@
 from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import userInfo
+from .models import userInfo, feedInfo
 from .serializer import userInfoSerializer
 import random
 
 from django.shortcuts import render
 
 from .findFeed.calculateFeed import calFeed
-from .csvRelated.csvToDIctList import csvToDictList
+from .csvRelated.csvToDIctList import csvToDictList 
 # Create your views here.
 @api_view(['GET'])
 def helloAPI(request):
@@ -60,9 +60,19 @@ def findFeed(request):
     #return Response(feedInfo)
     return Response("hello")
 
-@api_view(['GET'])
+@api_view(['POST'])
 def makeFeedDB(request):
     #def
-    listData = csvToDictList()
+    feed_info = feedInfo() #넣어둘 모델var 미리 설정
+    #request.POST([])
+    dict_list = csvToDictList()
+    #print(dict_list)
+    #for list in dict_list:
+        #print(list)
+        #feed_info = list
+        #feed_info.save()
     #print(listData[0])
-    return Response("hello")
+
+
+
+    return Response(dict_list)
