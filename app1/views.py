@@ -56,8 +56,10 @@ def findFeed(request):
     #alg, flavor, health [String]
     #algKey,flavorKey,healthKey
     flavorKey = list(request.POST['flavor'].replace('[','').replace(']','').replace(' ','').split(","))
-    algKey = request.POST['alg']
-    healthKey = request.POST['health']
+    algKey = list(request.POST['flavor'].replace('[','').replace(']','').replace(' ','').split(","))
+    healthKey = list(request.POST['flavor'].replace('[','').replace(']','').replace(' ','').split(","))
+    #algKey = request.POST['alg']
+    #healthKey = request.POST['health']
     
     #[def]calFeed : request 를 통해서 원하는 제품을 뽑아내주는 return (feedID, feedName 출력)
     feed_info = feedInfo() #넣어둘 모델var 미리 설정
@@ -69,7 +71,7 @@ def findFeed(request):
     #filterDictList.filter_health(dict_list,healthKey)
 
     #return Response(feedInfo)
-    return Response(flavorKey)
+    return Response(dict_list)
 
 @api_view(['POST'])
 def makeFeedDB(request):
