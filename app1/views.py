@@ -55,7 +55,7 @@ def inputUserInfo(request):
 def findFeed(request):
     #alg, flavor, health [String]
     #algKey,flavorKey,healthKey
-    flavorKey = list(request.POST['flavor'].split(",[]"))
+    flavorKey = list(request.POST['flavor'].replace('[','').replace(']','').replace(' ','').split(","))
     algKey = request.POST['alg']
     healthKey = request.POST['health']
     
