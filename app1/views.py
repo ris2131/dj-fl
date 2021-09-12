@@ -64,12 +64,12 @@ def findFeed(request):
     #request.POST([])
     dict_list = csvToDictList(flavorKey,algKey,healthKey)
 
-    filterDictList.filter_flavor(dict_list,flavorKey)
-    filterDictList.filter_alg(dict_list,algKey)
-    filterDictList.filter_health(dict_list,healthKey)
+    #filterDictList.filter_flavor(dict_list,flavorKey)
+    #filterDictList.filter_alg(dict_list,algKey)
+    #filterDictList.filter_health(dict_list,healthKey)
 
     #return Response(feedInfo)
-    return Response(dict_list)
+    return Response(flavorKey)
 
 @api_view(['POST'])
 def makeFeedDB(request):
