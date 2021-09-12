@@ -39,7 +39,7 @@ def csvToDictList(flavorKey,algKey, healthKey):#algKey,flavorKey,healthKey
             #print(dic_data)
             data.append(dic_data)
     
-    filterDictList.filter_flavor(data,flavorKey)
+    #filterDictList.filter_flavor(data,flavorKey)
     #filterDictList.filter_alg(data,algKey)
     #filterDictList.filter_health(data,healthKey)
     print(data)
