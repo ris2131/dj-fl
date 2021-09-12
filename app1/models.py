@@ -11,12 +11,12 @@ class userInfo(models.Model):
 
 
 class feedInfo(models.Model):
-    brand = models.CharField(max_length=20,default = "no brand data")
-    name = models.CharField(max_length=40,default = "no feedName data")
+    brand = models.CharField(max_length=20,default = "no brand data")#브랜드
+    name = models.CharField(max_length=40,default = "no feedName data")#이름
     foodType = models.CharField(max_length=10, default = "no info")  #영양제,밥
     foodShape = models.CharField(max_length=10, default = "no info") #건식,
-    size = models.CharField(max_length=10,default="no size data")
-    flavor = models.CharField(max_length =40,default="no Flavor data")
-    alg = models.CharField(max_length = 40,default = "no allergy data")
-    health = models.CharField(max_length=20 , default = "no health data")
-    explain = models.CharField(max_length = 1000, default ="no explain data")
+    size = models.CharField(max_length=10,default="no size data")#동물크기
+    flavor = models.CharField(max_length =40,default="no Flavor data")#mainFlavor
+    alg = models.CharField(max_length = 40,default = "no allergy data")#알레르기
+    health = models.CharField(max_length=20 , default = "no health data")#건강개선
+    explain = models.CharField(max_length = 1000, default ="no explain data")#사료해석

@@ -1,6 +1,6 @@
 #급여대상,사료 종목,브랜드,이름,가격,용량,사료 형태,제조국,유기농여부,특이사항,칼로리(100g),특정종대상,동물크기,급여연령,Mainflavor,주원료,키블크기,금기대상,특정급여시기,질환,처방적용대상효능,수분,조단백질,조지방,조회분,조섬유,칼슘,인,탄수화물,오메가3,오메가6
 import csv
-def csvToDict():
+def csvToDictList():
     data = [] #list
     with open('KingFile.csv', encoding='utf-8-sig') as csvfile: #특정 파일을 읽어도록
         rdr = csv.DictReader(csvfile)
