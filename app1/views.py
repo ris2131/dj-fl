@@ -64,4 +64,5 @@ def findFeed(request):
 def makeFeedDB(request):
     #def
     listData = csvToDictList()
+    #print(listData[0])
     return Response("hello")
