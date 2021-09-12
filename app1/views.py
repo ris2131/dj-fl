@@ -8,7 +8,7 @@ import random
 from django.shortcuts import render
 
 from .findFeed.calculateFeed import calFeed
-
+from .csvRelated.csvToDIct import csvToDict
 # Create your views here.
 @api_view(['GET'])
 def helloAPI(request):
@@ -63,5 +63,5 @@ def findFeed(request):
 @api_view(['GET'])
 def makeFeedDB(request):
     #def
-    #csvToDict('file')
-    return Response("DONE")
+    
+    return Response(csvToDict())
