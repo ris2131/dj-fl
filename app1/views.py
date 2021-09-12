@@ -10,6 +10,7 @@ from django.shortcuts import render
 
 from .findFeed.calculateFeed import calFeed
 from .csvRelated.csvToDIctList import csvToDictList 
+
 # Create your views here.
 @api_view(['GET'])
 def helloAPI(request):
@@ -70,13 +71,13 @@ def findFeed(request):
     #return Response(feedInfo)
     return Response(dict_list)
 
-@api_view(['POST'])
+@api_view(['GET'])
 def makeFeedDB(request):
     #def
-    feed_info = feedInfo() #넣어둘 모델var 미리 설정
-    #request.POST([])
-    dict_list = csvToDictList()
-    #print(dict_list)
+    #feed_info = feedInfo() #넣어둘 모델var 미리 설정
+   
+    dict_list = csvToDictList("","","")
+    
     #for list in dict_list:
         #print(list)
         #feed_info = list
