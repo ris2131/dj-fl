@@ -4,6 +4,7 @@ from rest_framework.decorators import api_view
 from .models import userInfo, feedInfo
 from .serializer import userInfoSerializer
 import random
+from .csvRelated import filterDictList
 
 from django.shortcuts import render
 
@@ -51,16 +52,25 @@ def inputUserInfo(request):
 #화면에 보여주는 역할
 @api_view(['POST'])
 def findFeed(request):
-    #size = request.POST['size']#debug
-    #여기서 def 를 하나 만들어서 계산해주는 back 을 하나 만들어 줄 예정
+    #alg, flavor, health [String]
+    #algKey,flavorKey,healthKey
+    flavorKey = request.POST['flavor']
+    algKey = request.POST['alg']
+    healthKey = request.POST['health']
+    
     #[def]calFeed : request 를 통해서 원하는 제품을 뽑아내주는 return (feedID, feedName 출력)
-    feedInfo = calFeed(request)
+    feed_info = feedInfo() #넣어둘 모델var 미리 설정
+    #request.POST([])
+    dict_list = csvToDictList(flavorKey,algKey,healthKey)
 
-    #return render(request,size)
+    filterDictList.filter_flavor(dict_list,flavorKey)
+    filterDictList.filter_alg(dict_list,algKey)
+    filterDictList.filter_health(dict_list,healthKey)
+
     #return Response(feedInfo)
-    return Response("hello")
+    return Response(dict_list)
 
-@api_view(['POST'])
+@api_view(['GET'])
 def makeFeedDB(request):
     #def
     feed_info = feedInfo() #넣어둘 모델var 미리 설정

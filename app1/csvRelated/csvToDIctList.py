@@ -2,7 +2,7 @@
 import csv 
 from . import filterDictList
 #from app1 import csvRelated
-def csvToDictList():#algKey,flavorKey,healthKey
+def csvToDictList(flavorKey,algKey, healthKey):#algKey,flavorKey,healthKey
     data = [] #list
     #현재위치가 루트로 되어있는거 같더라.
     with open('./app1/csvRelated/kingFile.csv','r',encoding='utf-8-sig') as csvfile: #특정 파일을 읽어도록
@@ -39,10 +39,10 @@ def csvToDictList():#algKey,flavorKey,healthKey
             #print(dic_data)
             data.append(dic_data)
     
+    filterDictList.filter_flavor(data,flavorKey)
     #filterDictList.filter_alg(data,algKey)
-    #filterDictList.filter_flavor(data,flavorKey)
     #filterDictList.filter_health(data,healthKey)
-
+    print(data)
     return data
 
 
